@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import configCurrencies from './config/currencies.json'
+import configCurrencies from '../config/currencies.json'
 import { Button } from 'antd';
 import PropTypes from 'prop-types';
 
