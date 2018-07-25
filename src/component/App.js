@@ -6,18 +6,26 @@ import CurrencyAmountInput from './CurrencyAmountInput';
 import CurrencyOption from './CurrencyOption'
 import PropTypes from 'prop-types';
 
-const { Header, Footer, Content } = Layout;
+const { Content } = Layout;
 
 const Container = styled.div`
   width: 100%;
   max-width: 480px;
   height: auto;
   margin: 0 auto;
+`;
 
-  .ant-layout-header {
-    background: #f0f2f5;
-    padding: 16px 16px 0 16px;
-  }
+const Header = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-bottom: 2px solid #aaa;
+`;
+
+const Title = styled.div`
+  font-size: 18px;
+  font-style: italic; 
+  font-weight: 700;
 `;
 
 class App extends Component {
@@ -62,6 +70,9 @@ class App extends Component {
       <Container>
         <Layout>
           <Header>
+            <Title>
+              USD - United State Dollars
+            </Title>
             <CurrencyAmountInput 
               amount={amount}
               setAmount={setAmount}
@@ -79,9 +90,6 @@ class App extends Component {
               addCurrency={addCurrency}
             />
           </Content>
-          <Footer>
-            <p>Footer</p>
-          </Footer>
         </Layout>
       </Container>
     );

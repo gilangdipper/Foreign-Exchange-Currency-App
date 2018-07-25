@@ -5,10 +5,7 @@ const initialState = 1;
 export default function amount(state = initialState, action) {
   switch (action.type) {
 		case ADD_CURR_VALUE:
-      return {
-        ...state,
-        value: action.value
-			}
+      return action.value
 
     default:
       return state

@@ -6,7 +6,13 @@ const Option = Select.Option;
 
 const OptionWrapper = styled.div`
 	display: flex;
-	padding: 16px 16px 0 16px;
+	padding: 0 16px 16px 16px;
+
+	.ant-btn {
+		width: 100%;
+		text-align: left;
+		font-size: 16px;
+	}
 
 	.left {
 		flex-grow: 9;
@@ -19,7 +25,7 @@ const OptionWrapper = styled.div`
 		text-align: right;
 		padding-left: 6px;
 		.ant-btn {
-			width: 100%;
+			text-align: center;
 		}
 	}
 `;
@@ -27,8 +33,9 @@ const OptionWrapper = styled.div`
 class CurrencyOption extends Component {
 
 	state= {
-		currency: ''
-	}
+		currency: '',
+		shouldShowFrom: false
+	};
 	
 	renderOption = () => {
 		const { currency, latestCurrencies } = this.props;
@@ -41,41 +48,58 @@ class CurrencyOption extends Component {
 
 		return filteredCurrency.map((item, index) => 
 			<Option key={index} value={item.id}>{item.id}</Option>
-		)
-	}
+		);
+	};
 
 	handleClick = () => {
 		const { latestCurrencies, addCurrency } = this.props;
 		const { currency } = this.state;
 		if(currency) {
-			const newCurrency = latestCurrencies.find(item => item.id === currency);
+			const newCurrency = 
+				latestCurrencies.find(item => item.id === currency);
 			addCurrency(newCurrency);
-			this.setState({ currency: '' });
+			this.setState({ currency: '', shouldShowFrom: false });
 		}
-	}
+	};
 
-	handleCurrencyChange = currency => {
+	handleCurrencyChange = currency =>
 		this.setState({ currency });
-	}
 
   render() {
     return (
       <OptionWrapper>
-				<div className='left'>
-					<Select
-						value={this.state.currency}
-						style={{ width: '32%' }}
-						onChange={this.handleCurrencyChange}
-					>
-						{this.renderOption()}
-					</Select>
-				</div>
-				<div className='right'>
-					<Button type="primary" onClick={this.handleClick}>Submit</Button>
-				</div>
+				{!this.state.shouldShowFrom
+					? <Button 
+							type="primary" 
+							icon="plus-circle" 
+							onClick={() => this.setState({ shouldShowFrom: true })}
+						>
+							Add More Curencies
+						</Button>
+					: <React.Fragment>
+							<div className='left'>
+								<Select
+									value={this.state.currency}
+									style={{ width: '32%' }}
+									onChange={this.handleCurrencyChange}
+								>
+									{this.renderOption()}
+								</Select>
+							</div>
+							<div className='right'>
+								<Button 
+									type="primary" 
+									icon="plus-circle" 
+									onClick={this.handleClick}
+								>
+									Submit
+								</Button>
+							</div>
+						</React.Fragment>
+				}
       </OptionWrapper>
     );
-  }
-}
+  };
+};
 
 export default CurrencyOption;

@@ -3,13 +3,20 @@ import { Input } from 'antd';
 import styled from 'styled-components';
 
 const InputWrapper = styled.div`
+  display: flex;
+
+  .ant-input-group-wrapper {
+    margin: 0!important;
+  }
 	.ant-input {
 		text-align: right;
 		font-size: 24px
-		height: 50px;
+    height: 50px;
+    font-weight: 800;
 	}
 	.ant-input-group-addon {
-		font-size: 24px
+    font-size: 24px
+    font-weight: 800;
 	}
 `;
 

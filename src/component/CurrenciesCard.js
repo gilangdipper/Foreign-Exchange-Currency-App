@@ -2,16 +2,18 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import configCurrencies from './config/currencies.json'
 import { Button } from 'antd';
+import PropTypes from 'prop-types';
 
 const CardWrapper = styled.div`
   padding: 16px 16px 0 16px;
 `;
 
 const Card = styled.div`
-	border: 1px solid #000;
+	border: 1px solid #aaa;
 	margin-bottom: 14px;
 	border-radius: 4px;
 	display: flex;
+	background-color: #fff;
 `;
 
 const TitleRate = styled.div`
@@ -34,12 +36,17 @@ const LeftContent = styled.div`
 
 const RightContent = styled.div`
 	align-items: center;
-	// border-left: 1px solid #000;
-	width: 10%;
+	width: 11%;
 
 	.ant-btn {
 		height: 100%;
 		width: 100%;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+
+		.anticon {
+			color: red;
+		}
 	}
 `;
 
@@ -80,7 +87,6 @@ class CurrencyCard extends Component {
 				</LeftContent>
 				<RightContent>
 					<Button 
-						type="primary"
 						icon="minus-circle"
 						size='large'
 						onClick={()=> removeCurrency(item.id)} 

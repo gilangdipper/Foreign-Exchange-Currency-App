@@ -10,26 +10,20 @@ const initialState = [
 export default function currencies(state = initialState, action) {
   switch (action.type) {
     case ADD_CURR:
-      return {
+      return [
         ...state,
-        currency: [
-					...state.currency,
-					{
-						id: action.currency.id,
-						rate: action.currency.rate
-					}
-				]
-			}
+        {
+					id: action.currency.id,
+					rate: action.currency.rate
+				}
+			]
 
     case REMOVE_CURR:
-			return {
-        ...state,
-        currency: [
-					...(state.currency.filter(currency =>
-						currency.id !== action.id
-					))
-				]
-			}
+			return [
+        ...(state.filter(currency =>
+					currency.id !== action.id
+				))
+			]
 
     default:
       return state
