@@ -5,10 +5,10 @@ const initialState = [];
 export default function latestCurrencies(state = initialState, action) {
   switch (action.type) {
 		case SET_CURR:
-      return {
+      return [
         ...state,
-        latestCurrencies: action.currencies
-			}
+        action.currencies
+			]
 			
     default:
       return state
