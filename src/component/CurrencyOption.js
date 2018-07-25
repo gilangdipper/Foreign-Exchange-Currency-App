@@ -31,7 +31,7 @@ const OptionWrapper = styled.div`
 	}
 `;
 
-class CurrencyOption extends Component {
+class CurrenciesOption extends Component {
 	static propTypes = {
     currency: PropTypes.array,
     latestCurrencies: PropTypes.array,
@@ -108,4 +108,4 @@ class CurrencyOption extends Component {
   };
 };
 
-export default CurrencyOption;
+export default CurrenciesOption;
