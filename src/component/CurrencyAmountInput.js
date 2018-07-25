@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Input } from 'antd';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const InputWrapper = styled.div`
   display: flex;
@@ -21,6 +22,11 @@ const InputWrapper = styled.div`
 `;
 
 class CurrencyAmountInput extends Component {
+  static propTypes = {
+    amount: PropTypes.number,
+    setAmount: PropTypes.func
+  };
+
   state= {
 		amount: 0
 	}

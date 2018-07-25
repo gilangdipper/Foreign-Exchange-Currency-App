@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Select, Button } from 'antd';
+import PropTypes from 'prop-types';
 
 const Option = Select.Option;
 
@@ -31,6 +32,11 @@ const OptionWrapper = styled.div`
 `;
 
 class CurrencyOption extends Component {
+	static propTypes = {
+    currency: PropTypes.array,
+    latestCurrencies: PropTypes.array,
+    addCurrency: PropTypes.func
+  };
 
 	state= {
 		currency: '',

@@ -61,7 +61,12 @@ const CurrencyConverted =styled.div`
 	font-style: italic; 
 `;
 
-class CurrencyCard extends Component {
+class CurrenciesCard extends Component {
+	static propTypes = {
+    amount: PropTypes.number,
+    currency: PropTypes.array,
+    removeCurrency: PropTypes.func
+  };
 
 	renderlistCurrencies = () => {
 		const { currency, amount, removeCurrency } = this.props;
@@ -105,4 +110,4 @@ class CurrencyCard extends Component {
   }
 }
 
-export default CurrencyCard;
+export default CurrenciesCard;
