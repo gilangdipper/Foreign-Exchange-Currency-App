@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 import { Select, Button } from 'antd';
 import PropTypes from 'prop-types';
+import configCurrencies from '../config/currencies.json';
 
 const Option = Select.Option;
 
@@ -53,7 +54,9 @@ class CurrenciesOption extends Component {
 			});
 
 		return filteredCurrency.map((item, index) => 
-			<Option key={index} value={item.id}>{item.id}</Option>
+			<Option key={index} value={item.id}>
+				{`${item.id} - ${configCurrencies.description[item.id]}`}
+			</Option>
 		);
 	};
 

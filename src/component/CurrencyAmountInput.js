@@ -14,10 +14,12 @@ const InputWrapper = styled.div`
 		font-size: 24px
     height: 50px;
     font-weight: 800;
+    color: #1890ff;
 	}
 	.ant-input-group-addon {
     font-size: 24px
     font-weight: 800;
+    color: #1890ff;
 	}
 `;
 

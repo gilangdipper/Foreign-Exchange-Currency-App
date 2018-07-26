@@ -26,6 +26,7 @@ const Title = styled.div`
   font-size: 18px;
   font-style: italic; 
   font-weight: 700;
+  color: #1890ff;
 `;
 
 class App extends Component {
