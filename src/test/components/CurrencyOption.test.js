@@ -3,7 +3,7 @@ import CurrencyOption from '../../component/CurrencyOption';
 import { OptionWrapper } from '../../component/CurrencyOption';
 import { Button } from 'antd';
 
-describe('<CurrenciesCard />', () => {
+describe('<CurrencyOption />', () => {
   const baseProps = {
     amount: 1,
     currency: [
@@ -21,7 +21,11 @@ describe('<CurrenciesCard />', () => {
 		shallow(<CurrencyOption {...baseProps} {...props} />);
 		
 
-  it('Should be render Currency card if there ara Currency data', () => {
+  it('Should be render button "Add More Curencie"', () => {
     expect(ComponentBase().find(OptionWrapper).find(Button).prop('children')).toBe('Add More Curencies');
+	});
+
+	it('Should be render button submit the Currency if shouldShowFrom state is true', () => {
+    expect(ComponentBase().setState({ shouldShowFrom: true }).find(OptionWrapper).find(Button).prop('children')).toBe('Submit');
 	});
 });
