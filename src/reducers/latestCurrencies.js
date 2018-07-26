@@ -1,4 +1,4 @@
-import { SET_CURR } from '../constants/ActionTypes'
+import { SET_CURR } from '../constants/ActionTypes';
 
 const initialState = [];
 
@@ -10,4 +10,4 @@ export default function latestCurrencies(state = initialState, action) {
     default:
       return state
   }
-}
+};

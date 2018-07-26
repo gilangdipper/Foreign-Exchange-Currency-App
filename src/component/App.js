@@ -3,7 +3,7 @@ import { Layout } from 'antd';
 import styled from 'styled-components';
 import CurrencyCard from './CurrenciesCard';
 import CurrencyAmountInput from './CurrencyAmountInput';
-import CurrencyOption from './CurrencyOption'
+import CurrencyOption from './CurrencyOption';
 import PropTypes from 'prop-types';
 
 const { Content } = Layout;
@@ -46,7 +46,7 @@ class App extends Component {
         const latestCurrencies = this.getCurrencyFormated(data);
         this.props.setCurrencies(latestCurrencies);
 			});
-	}
+	};
 	
 	getCurrencyFormated = data => 
     Object.keys(data.rates).map(key => {
@@ -93,7 +93,7 @@ class App extends Component {
         </Layout>
       </Container>
     );
-  }
-}
+  };
+};
 
 export default App;

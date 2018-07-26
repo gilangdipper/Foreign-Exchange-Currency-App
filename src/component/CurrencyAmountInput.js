@@ -27,27 +27,16 @@ class CurrencyAmountInput extends Component {
     setAmount: PropTypes.func
   };
 
-  state= {
-		amount: 0
-	}
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.amount > 0) {
-      this.setState({amount: nextProps.amount});
-		}
-  }
-
   handleNumberChange = (e) => {
     const number = parseInt(e.target.value || 0, 10);
     if (isNaN(number)) {
       return;
     }
-		this.setState({ amount: number });
 		this.props.setAmount(number);
   }
 
   render() {
-    const { amount } = this.state;
+    const { amount } = this.props;
     return (
       <InputWrapper>
         <Input

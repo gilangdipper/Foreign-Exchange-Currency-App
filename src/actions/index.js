@@ -1,4 +1,4 @@
-import * as types from '../constants/ActionTypes'
+import * as types from '../constants/ActionTypes';
 
 export const addCurrency = currency => ({ type: types.ADD_CURR, currency });
 export const setLatestCurrencies = currencies => ({ type: types.SET_CURR, currencies });

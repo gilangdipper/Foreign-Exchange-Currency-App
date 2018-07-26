@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import configCurrencies from '../config/currencies.json'
+import configCurrencies from '../config/currencies.json';
 import { Button } from 'antd';
 import PropTypes from 'prop-types';
 
@@ -107,7 +107,7 @@ class CurrenciesCard extends Component {
 				{this.renderlistCurrencies()}
 			</CardWrapper> 
     );
-  }
-}
+  };
+};
 
 export default CurrenciesCard;

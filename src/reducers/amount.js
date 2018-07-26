@@ -1,4 +1,4 @@
-import { ADD_CURR_VALUE } from '../constants/ActionTypes'
+import { ADD_CURR_VALUE } from '../constants/ActionTypes';
 
 const initialState = 1;
 
@@ -10,4 +10,4 @@ export default function amount(state = initialState, action) {
     default:
       return state
   }
-}
+};

@@ -1,4 +1,4 @@
-import { ADD_CURR, REMOVE_CURR } from '../constants/ActionTypes'
+import { ADD_CURR, REMOVE_CURR } from '../constants/ActionTypes';
 
 const initialState = [
 	{ id: 'IDR', rate: 14517.4978577549 },

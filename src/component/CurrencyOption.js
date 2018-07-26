@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 import { Select, Button } from 'antd';
 import PropTypes from 'prop-types';
@@ -82,7 +82,7 @@ class CurrenciesOption extends Component {
 						>
 							Add More Curencies
 						</Button>
-					: <React.Fragment>
+					: <Fragment>
 							<div className='left'>
 								<Select
 									value={this.state.currency}
@@ -101,7 +101,7 @@ class CurrenciesOption extends Component {
 									Submit
 								</Button>
 							</div>
-						</React.Fragment>
+						</Fragment>
 				}
       </OptionWrapper>
     );

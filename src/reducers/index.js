@@ -8,6 +8,6 @@ const rootReducer = combineReducers({
     amount,
     currencies,
     latestCurrencies
-})
+});
 
-export default rootReducer
+export default rootReducer;
