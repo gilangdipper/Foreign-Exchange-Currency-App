@@ -20,3 +20,19 @@ Object.assign = require('object-assign');
 if (process.env.NODE_ENV === 'test') {
   require('raf').polyfill(global);
 }
+
+const enzyme = require('enzyme');
+const Adapter = require('enzyme-adapter-react-16');
+const { shallow, mount, render } = require('enzyme');
+const XMLHttpRequest = require('xhr2');
+const { shallowWithState } = require('enzyme-redux');
+
+enzyme.configure({ adapter: new Adapter() });
+
+
+global.XMLHttpRequest = XMLHttpRequest;
+// global.fetch = require('jest-fetch-mock');
+global.shallow = shallow;
+global.mount = mount;
+global.render = render;
+global.shallowWithState = shallowWithState;

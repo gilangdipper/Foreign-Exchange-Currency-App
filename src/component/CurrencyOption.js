@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const Option = Select.Option;
 
-const OptionWrapper = styled.div`
+export const OptionWrapper = styled.div`
 	display: flex;
 	padding: 0 16px 16px 16px;
 
@@ -95,7 +95,7 @@ class CurrenciesOption extends Component {
 							<div className='right'>
 								<Button 
 									type="primary" 
-									icon="plus-circle" 
+									icon="plus-circle-o" 
 									onClick={this.handleClick}
 								>
 									Submit

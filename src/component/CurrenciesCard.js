@@ -4,11 +4,11 @@ import configCurrencies from '../config/currencies.json'
 import { Button } from 'antd';
 import PropTypes from 'prop-types';
 
-const CardWrapper = styled.div`
+export const CardWrapper = styled.div`
   padding: 16px 16px 0 16px;
 `;
 
-const Card = styled.div`
+export const Card = styled.div`
 	border: 1px solid #aaa;
 	margin-bottom: 14px;
 	border-radius: 4px;
@@ -16,7 +16,7 @@ const Card = styled.div`
 	background-color: #fff;
 `;
 
-const TitleRate = styled.div`
+export const TitleRate = styled.div`
 	display: flex;
 	font-size: 24px;
 
