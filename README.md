@@ -13,7 +13,8 @@
 
 ### docker-compose
 docker-compose up -d --build
-
+or
+docker-compose up
 ```
 
 ## Test
