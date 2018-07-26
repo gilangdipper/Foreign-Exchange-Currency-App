@@ -2,7 +2,7 @@ version: '2'
 
 services:
   exercise-app:
-    container_name: exercise-app
+    container_name: currency-app
     build:
       context: .
       dockerfile: Dockerfile
